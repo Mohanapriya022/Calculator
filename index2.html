@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Calculator Scientific</title>
+    <link rel="stylesheet" href="style/style2.css">
+</head>
+<body>
+    <h1>Mohanapriya'S Calculator</h1>
+    <div class="container">   
+        <div class="calculator">
+            <input type="text" placeholder="0" id="outputscreen">
+            <button class="ebtn" onclick="log()">log</button>
+            <button class="ebtn" onclick="exp()">X!</button>
+            <button class="ebtn" onclick="Cl()">Cl</button>
+            <button class="ebtn" onclick="del()">Del</button>
+            <button class="ebtn" onclick="display('%')">%</button>
+            <button class="ebtn" onclick="display('/')">/</button>
+            <button class="ebtn" onclick="sin()">sin</button>
+            <button class="ebtn" onclick="cos()">cos</button>
+            <button class="ebtn" onclick="display('7')">7</button>
+            <button class="ebtn" onclick="display('8')">8</button>
+            <button class="ebtn" onclick="display('9')">9</button>
+            <button class="ebtn" onclick="display('*')">*</button>
+            <button class="ebtn" onclick="tan()">tan</button>
+            <button class="ebtn" onclick="pi()">&pi;</button>
+            <button class="ebtn" onclick="display('4')">4</button>
+            <button class="ebtn" onclick="display('5')">5</button>
+            <button class="ebtn" onclick="display('6')">6</button>
+            <button class="ebtn" onclick="display('-')">-</button>
+            <button class="ebtn" onclick="e()">e</button>
+            <button class="ebtn" onclick="squareroot()">&radic;</button>
+            <button class="ebtn" onclick="display('1')">1</button>
+            <button class="ebtn" onclick="display('2')">2</button>
+            <button class="ebtn" onclick="display('3')">3</button>
+            <button class="ebtn" onclick="display('+')">+</button>
+            <button class="btn" onclick="nextpage()">Nxt</button>
+            <button class="ebtn" onclick="xsquare()">x<sup>2</sup></button>
+            <button class="ebtn" onclick="display('00')">00</button>
+            <button class="ebtn" onclick="display('0')">0</button>
+            <button class="ebtn" onclick="display('.')">.</button>
+            <button class="ebtn" onclick="calculator()">=</button>
+        </div>
+    </div>
+    <script>
+        let outputscreen = document.getElementById("outputscreen");
+        function display(num){
+             outputscreen.value += num;
+        }
+        function calculator(){
+            try{
+                outputscreen.value = eval(outputscreen.value);
+            }
+            catch(err){
+                alert("Invalid Input");
+            }
+        }
+        function nextpage(){
+            location.replace("index.html");
+        }
+        function Cl(){
+            outputscreen.value = " ";
+        }
+        function del(){
+            outputscreen.value = outputscreen.value.slice(0,-1);
+        }
+        function sin(){
+            outputscreen.value = Math.sin(outputscreen.value);
+        }
+        function cos(){
+            outputscreen.value = Math.cos(outputscreen.value);
+        }
+        function tan(){
+            outputscreen.value = Math.tan(outputscreen.value);
+        }
+        function log(){
+            outputscreen.value = Math.log(outputscreen.value);
+        }
+        function ln(){
+            outputscreen.value = Math.log(outputscreen.value);
+        }
+        function pi(){
+            outputscreen.value = outputscreen.value + Math.PI;
+        }
+        function squareroot(){
+            outputscreen.value = Math.sqrt(outputscreen.value);
+        }
+        function xsquare(){
+            outputscreen.value = outputscreen.value*outputscreen.value;
+        }
+        function e(){
+            outputscreen.value = Math.E(outputscreen.value);
+        }
+        function exp(){
+            outputscreen.value = Math.exp(outputscreen.value);
+        }
+    </script>
+</body>
+</html>
